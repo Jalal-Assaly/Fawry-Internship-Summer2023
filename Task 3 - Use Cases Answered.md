@@ -2,7 +2,7 @@
 ### Question 1. When working with a large collection where frequent insertion and deletion operations are expected, and random access is not a primary concern, what is the best choice ?
 **Answer:** LinkedList class is the best option, because its insertion and deletion operations are fast, and a large dataset means we need a data structure that can also easily grow, without the need for resizing.
 
-### Question 2. Suppose you are building an inventory management system for an online store. You need to keep track of the available stock of products. Each product has a unique identifier (product ID) and a corresponding quantity in stock. Which Collection can we use to solve this?
+#### Question 2. Suppose you are building an inventory management system for an online store. You need to keep track of the available stock of products. Each product has a unique identifier (product ID) and a corresponding quantity in stock. Which Collection can we use to solve this?
 **Answer:** A HashSet class is best suited, because it provides a Hashtable for key-value mapping ideal to map the productID with the corresponding quantity in stock. Also, it eliminates any redundant products from the database thanks to the Set data structure.
 
 ### Question 3. Suppose you are developing a user activity tracking system where you need to maintain the order of user actions. You want to store the actions in a collection while ensuring uniqueness?
