@@ -12,4 +12,10 @@
 **Answer:** A TreeSet is the best option, because it provides a custom sorting mechanism while avoiding data duplicates.
 
 ### Question 5. You are developing a game, and you want to keep track of the top 10 players' high scores. Which Java Collection would be most appropriate for maintaining this leaderboard?
-**Answer:** 
+**Answer:** Since the number of players being tracked is always 10, I propose an ArrayList that can store the 10 players contiguously. It is static and small.
+
+### Question 6. You are building a movie recommendation system. How would you store the movie data and user preferences using Java Collections? How would you efficiently retrieve and suggest movie recommendations based on a user's previous choices?
+**Answer**: I think that a HashMap could be best suited for the task. It provides a key-value pair that can be easily used to identify the different fields and attributes of a movie and a user. For example:
+Movie: <Title: The Prestige, Release Date: 2007, Genre: Mystery, Duration: 2h10, ...>
+User: <Name: John Doe, Age: 33, Favorite Genre: (Mystery, Thriller, Action), Average time on screen: 2h00, ...>
+To effectively map a user with movies recommendation, we would simply need to compare the appropriate fields and see if there is a match. For example, <Genre: Mystery>.
