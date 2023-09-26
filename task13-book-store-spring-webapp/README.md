@@ -4,17 +4,17 @@
 
 **Welcome to the Bookstore Web Application!** This project is built using **Spring Boot** 
 and follows the **Model-View-Controller (MVC) architecture**, making it a robust 
-and user-friendly platform for managing and purchasing books.
+and user-friendly platform for managing books.
 
 ## Key Features
 ### Development
-- **Spring Boot**: We leveraged Spring Boot and its many tools to simplify application setup and development, 
-allowing for efficient development and deployment.
+- **Spring Boot**: Spring Boot and its many tools were used to simplify application setup and development, 
+allowing for efficient development.
 
 - **JSP Files**: JavaServer Pages (JSP) are used to create dynamic web pages, 
 providing a user interface that adapts by using tools like JSTL tags.
 
-- **MySQL Database**: We use MySQL as the primary database to store the books information, namely 
+- **MySQL Database**: A MySQL database was used as the primary database to store the books information, namely 
 the IBAN, book title, author name, category and price.
 
 - **JPA & Hibernate**: JPA and its Hibernate ORM implementation are utilized to map Java objects to database tables,
@@ -34,4 +34,4 @@ allowing for efficient unit testing.
 ## Usage
 - Users can browse and search for books by iban, title, author, or category.
 - Users can add, delete and update books as wished through intuitive forms.
-- Comprehensive validation ensures data integrity and security.
+- Comprehensive restrictive validation ensures data integrity and security.
