@@ -1,0 +1,12 @@
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\models\Category.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\services\extra\ValidationResult.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\dto\BookDTO.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\BookStoreWebApplication.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\controllers\BookController.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\mapper\BookMapper.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\services\BookService.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\models\Book.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\services\extra\BookValidationService.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\models\Author.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\services\extra\UnsuitableBookException.java
+C:\Users\Jalal\Desktop\Workspace\Projects\task13-book-store-spring-webapp\src\main\java\com\example\bookstore\repositories\BookRepository.java
