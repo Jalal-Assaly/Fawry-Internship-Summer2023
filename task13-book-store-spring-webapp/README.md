@@ -29,6 +29,8 @@ by the framework make it easy to use and understand.
 allowing for efficient unit testing.
 - **Mockito Testing**: We have integrated Mockito for unit testing, ensuring the reliability and functionality of the application.
 
+## ERD
+<img width="313" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/c0b2e003-5e1d-4049-a1bd-6c47f38e1966">
 
 
 ## Usage
