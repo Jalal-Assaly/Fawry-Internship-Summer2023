@@ -34,10 +34,10 @@ allowing for efficient unit testing.
 
 
 ## UI
-<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/072c8a09-9409-4cbd-b277-7864d273474f">
-<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/86d866c9-0a3e-4195-8a83-72531a7f199c">
-<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/dc621457-c440-4c6a-83d4-7eecfd014932">
-<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/db319493-f89e-4647-bc5d-75df54f06009">
+<img width="1079" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/100fd5a7-5860-49ba-911e-04d98619c531">
+<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/d1f8da95-515e-400c-8572-1f72f88904a2">
+<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/3676bc93-c105-4cd1-a6ef-a490c77bfc45">
+<img width="1080" alt="image" src="https://github.com/Jalal-Assaly/Fawry-Internship-Summer2023/assets/140311958/b521b7f3-6139-44c5-9513-4fe6d6937cba">
 
 
 ## Usage
