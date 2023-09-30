@@ -1,16 +1,15 @@
 package com.example.bookstore.controllers;
 
-import com.example.bookstore.models.Author;
 import com.example.bookstore.models.Book;
-import com.example.bookstore.services.AuthorService;
 import com.example.bookstore.services.BookService;
+import com.example.bookstore.services.extra.UnsuitableBookException;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -28,90 +27,117 @@ public class BookController {
 
     // List All Books
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public ModelAndView getBooksList() {
+    public ModelAndView getBooksList(ModelAndView model) {
         List<Book> books = bookService.getAllBooks();
-        return new ModelAndView(
-                "listBooksPage",
-                "books", books);
+        model.addObject("books", books);
+        model.setViewName("listBooks");
+        return model;
     }
 
     // List Filtered Books
     @GetMapping("/search")
-    @ResponseStatus(HttpStatus.OK)
-    public ModelAndView searchBooks(@RequestParam("keyword") String keyword) {
+    public ModelAndView searchBooks(@RequestParam("keyword") String keyword,
+                                    ModelAndView model) {
+
         List<Book> books = bookService.searchBooks(keyword);
-        return new ModelAndView(
-                "listBooksPage",
-                "books", books);
+        model.addObject("books", books);
+        model.setViewName("listBooks");
+        return model;
     }
 
     //------------------------------------------------------------------------------
 
     // Add requests
     @GetMapping("/add")
-    @ResponseStatus(HttpStatus.OK)
-    public ModelAndView getAddBookForm() {
-        return new ModelAndView("addBookForm");
+    public ModelAndView getAddBookForm(ModelAndView model) {
+        model.setViewName("addBookForm");
+        return model;
     }
 
     @PostMapping("/add")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ModelAndView addBook(@ModelAttribute Book book) {
-        bookService.addBook(book);
+    public ModelAndView addNewBook(@ModelAttribute Book book,
+                                   ModelAndView model) {
 
-        return new ModelAndView("confirmOperationPage",
-                "message",
-                book.getBookName() + " was added successfully");
+        try {
+            bookService.addNewBook(book);
+            model.setStatus(HttpStatus.OK);
+            model.addObject("message", book.getBookName()
+                    + " has been added successfully");
+        } catch (ConstraintViolationException exception) {
+            model.setStatus(HttpStatus.BAD_REQUEST);
+            model.addObject("message", exception.getMessage());
+        }
+
+        model.addObject("action", "add");
+        model.setViewName("confirmBookOperation");
+        return model;
     }
 
     //-----------------------------------------------------------------------------------
 
     // Delete requests
     @GetMapping("/delete")
-    @ResponseStatus(HttpStatus.OK)
-    public ModelAndView getDeleteBookForm(@ModelAttribute Book book) {
-        return new ModelAndView("deleteBookForm",
-                new HashMap<>() {{
-                    put("iban", book.getIban());
-                    put("bookName", book.getBookName());
-                }}
-        );
+    public ModelAndView getDeleteBookForm(@ModelAttribute Book book,
+                                   ModelAndView model) {
+
+        model.addObject("iban", book.getIban());
+        model.addObject("bookName", book.getBookName());
+        model.setViewName("deleteBookForm");
+        return model;
     }
 
     @PostMapping("/delete")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ModelAndView deleteBook(@ModelAttribute Book book) {
-        bookService.deleteBook(book.getIban());
-        return new ModelAndView("confirmOperationPage",
-                "message",
-                book.getBookName() + " was deleted successfully");
+    public ModelAndView deleteBook(@ModelAttribute Book book,
+                                   ModelAndView model) {
+
+        try {
+            bookService.deleteBook(book.getIban());
+            model.setStatus(HttpStatus.OK);
+            model.addObject("message", book.getBookName()
+                    + " has been deleted successfully");
+        } catch (UnsuitableBookException exception) {
+            model.setStatus(HttpStatus.BAD_REQUEST);
+            model.addObject("message", exception.getMessage());
+        }
+
+        model.addObject("action", "delete");
+        model.setViewName("confirmBookOperation");
+        return model;
     }
 
     //------------------------------------------------------------------------------------
 
     // Update requests
     @GetMapping("/update")
-    @ResponseStatus(HttpStatus.OK)
-    public ModelAndView getUpdateBookForm(@ModelAttribute Book book) {
-        return new ModelAndView(
-                "updateBookForm",
-                new HashMap<>() {{
-                    put("iban", book.getIban());
-                    put("bookName", book.getBookName());
-                    put("authorName", book.getAuthorName());
-                    put("category", book.getCategory());
-                    put("price", book.getPrice());
-                }}
-        );
+    public ModelAndView getUpdateBookForm(@ModelAttribute Book book,
+                                          ModelAndView model) {
+
+        model.addObject("iban", book.getIban());
+        model.addObject("bookName", book.getBookName());
+        model.addObject("authorName", book.getAuthorName());
+        model.addObject("category", book.getCategory());
+        model.addObject("price", book.getPrice());
+
+        model.setViewName("updateBookForm");
+        return model;
     }
 
     @PostMapping("/update")
-    @ResponseStatus(HttpStatus.OK)
-    public ModelAndView updateBook(@ModelAttribute Book book) {
-        bookService.updateBook(book);
-        return new ModelAndView("confirmOperationPage",
-                "message",
-                book.getBookName() + " has been updated successfully");
+    public ModelAndView updateBook(@ModelAttribute Book book,
+                                   ModelAndView model) {
+
+        try {
+            bookService.updateBook(book);
+            model.setStatus(HttpStatus.OK);
+            model.addObject("message", book.getBookName()
+                    + " was updated  successfully");
+        } catch (ConstraintViolationException exception) {
+            model.setStatus(HttpStatus.BAD_REQUEST);
+            model.addObject("message", exception.getMessage());
+        }
+
+        model.addObject("action", "update");
+        model.setViewName("confirmBookOperation");
+        return model;
     }
 }
